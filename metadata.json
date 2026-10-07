@@ -1,0 +1,8 @@
+{
+  "name": "Mod Innovations 3",
+  "description": "Proactive financial solutions, strategic portfolio architecture, and wealth consulting tailored for sustainable growth.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
