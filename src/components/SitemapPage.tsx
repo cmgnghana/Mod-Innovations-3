@@ -1,19 +1,11 @@
 import React from 'react';
 import { 
   Home, 
-  Info, 
-  Layers, 
   PhoneCall, 
-  MapPin, 
   ArrowRight, 
   Printer, 
-  Cpu, 
   Sparkles, 
-  ChevronRight, 
-  ShieldCheck, 
-  FileText,
-  Compass,
-  Building2
+  ChevronRight
 } from 'lucide-react';
 import { hardwareServicesData, creativeServicesData } from '../data/servicesData';
 
@@ -53,11 +45,6 @@ export const SitemapPage: React.FC<SitemapPageProps> = ({
 
           {/* Eyebrow and Headline */}
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-800/60 text-[#84CC16] text-xs font-bold uppercase tracking-widest">
-              <FileText className="w-3.5 h-3.5" />
-              <span>Information Architecture Directory</span>
-            </div>
-            
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
               Website Structure & <span className="text-[#84CC16]">Sitemap</span>
             </h1>
@@ -89,9 +76,6 @@ export const SitemapPage: React.FC<SitemapPageProps> = ({
               className="group text-left p-5 rounded-xl bg-[#061814] border border-emerald-900/50 hover:border-[#84CC16]/60 hover:bg-[#071d18] transition-all duration-200 cursor-pointer flex flex-col justify-between"
             >
               <div>
-                <div className="w-10 h-10 rounded-lg bg-emerald-950/80 border border-emerald-800/60 flex items-center justify-center text-[#84CC16] group-hover:scale-110 transition-transform mb-4">
-                  <Home className="w-5 h-5" />
-                </div>
                 <div className="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1">01 / Main</div>
                 <h3 className="text-lg font-bold text-white group-hover:text-[#84CC16] transition-colors">
                   Home
@@ -112,9 +96,6 @@ export const SitemapPage: React.FC<SitemapPageProps> = ({
               className="group text-left p-5 rounded-xl bg-[#061814] border border-emerald-900/50 hover:border-[#84CC16]/60 hover:bg-[#071d18] transition-all duration-200 cursor-pointer flex flex-col justify-between"
             >
               <div>
-                <div className="w-10 h-10 rounded-lg bg-emerald-950/80 border border-emerald-800/60 flex items-center justify-center text-[#84CC16] group-hover:scale-110 transition-transform mb-4">
-                  <Info className="w-5 h-5" />
-                </div>
                 <div className="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1">02 / Profile</div>
                 <h3 className="text-lg font-bold text-white group-hover:text-[#84CC16] transition-colors">
                   About Us
@@ -135,9 +116,6 @@ export const SitemapPage: React.FC<SitemapPageProps> = ({
               className="group text-left p-5 rounded-xl bg-[#071d18] border-2 border-emerald-800/80 hover:border-[#84CC16] transition-all duration-200 cursor-pointer flex flex-col justify-between shadow-lg shadow-emerald-950/40"
             >
               <div>
-                <div className="w-10 h-10 rounded-lg bg-emerald-900/80 border border-[#84CC16]/40 flex items-center justify-center text-[#84CC16] group-hover:scale-110 transition-transform mb-4">
-                  <Layers className="w-5 h-5" />
-                </div>
                 <div className="text-xs uppercase tracking-wider text-[#84CC16] font-semibold mb-1">03 / Catalog</div>
                 <h3 className="text-lg font-bold text-white group-hover:text-[#84CC16] transition-colors">
                   Services
@@ -158,9 +136,6 @@ export const SitemapPage: React.FC<SitemapPageProps> = ({
               className="group text-left p-5 rounded-xl bg-[#061814] border border-emerald-900/50 hover:border-[#84CC16]/60 hover:bg-[#071d18] transition-all duration-200 cursor-pointer flex flex-col justify-between"
             >
               <div>
-                <div className="w-10 h-10 rounded-lg bg-emerald-950/80 border border-emerald-800/60 flex items-center justify-center text-[#84CC16] group-hover:scale-110 transition-transform mb-4">
-                  <ShieldCheck className="w-5 h-5" />
-                </div>
                 <div className="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1">04 / Advantage</div>
                 <h3 className="text-lg font-bold text-white group-hover:text-[#84CC16] transition-colors">
                   Why Choose Us
@@ -181,9 +156,6 @@ export const SitemapPage: React.FC<SitemapPageProps> = ({
               className="group text-left p-5 rounded-xl bg-[#061814] border border-emerald-900/50 hover:border-[#84CC16]/60 hover:bg-[#071d18] transition-all duration-200 cursor-pointer flex flex-col justify-between"
             >
               <div>
-                <div className="w-10 h-10 rounded-lg bg-emerald-950/80 border border-emerald-800/60 flex items-center justify-center text-[#84CC16] group-hover:scale-110 transition-transform mb-4">
-                  <PhoneCall className="w-5 h-5" />
-                </div>
                 <div className="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1">05 / Reach Out</div>
                 <h3 className="text-lg font-bold text-white group-hover:text-[#84CC16] transition-colors">
                   Contact Us
@@ -204,9 +176,6 @@ export const SitemapPage: React.FC<SitemapPageProps> = ({
                 Current
               </div>
               <div>
-                <div className="w-10 h-10 rounded-lg bg-emerald-950 border border-emerald-800/40 flex items-center justify-center text-[#84CC16] mb-4">
-                  <MapPin className="w-5 h-5" />
-                </div>
                 <div className="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1">06 / Index</div>
                 <h3 className="text-lg font-bold text-white">
                   Sitemap
