@@ -103,15 +103,19 @@ export const ContactSection: React.FC<ContactSectionProps> = () => {
                 </a>
 
                 <a 
-                  href="mailto:nanadjan5050@gmail.com" 
-                  className="flex items-center gap-3.5 sm:gap-4 p-3.5 sm:p-4 rounded-[1px] bg-emerald-950/50 border-none transition-colors group"
+                  href="#contact-form"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="flex items-center gap-3.5 sm:gap-4 p-3.5 sm:p-4 rounded-[1px] bg-emerald-950/50 border-none transition-colors group cursor-pointer"
                 >
                   <div className="text-[#84cc16] flex items-center justify-center shrink-0">
                     <Mail className="w-5 h-5 stroke-[2.2]" />
                   </div>
                   <div className="min-w-0">
                     <span className="text-[10px] sm:text-[11px] font-semibold text-slate-400 uppercase tracking-wider block">Email Inquiries</span>
-                    <span className="text-xs sm:text-sm font-bold text-white group-hover:text-[#EFDEBC] transition-colors truncate block">nanadjan5050@gmail.com</span>
+                    <span className="text-xs sm:text-sm font-bold text-white group-hover:text-[#EFDEBC] transition-colors truncate block">Online Inquiry Form</span>
                   </div>
                 </a>
 
@@ -167,7 +171,7 @@ export const ContactSection: React.FC<ContactSectionProps> = () => {
                 </div>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form id="contact-form" onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-1 mb-2">
                   <h3 className="text-xl font-bold text-white font-display">
                     Send Us a Message

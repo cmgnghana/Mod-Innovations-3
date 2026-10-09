@@ -3,7 +3,6 @@ import {
   ArrowUpRight, 
   ArrowRight, 
   Printer, 
-  Layers, 
   Cpu, 
   CheckCircle2, 
   Settings,
@@ -124,11 +123,6 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
 
             <div className="relative z-10 p-8 sm:p-12 lg:p-16 max-w-3xl space-y-6">
               
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/80 border border-emerald-800/60 text-[#84cc16] text-xs font-bold uppercase tracking-widest">
-                <Layers className="w-3.5 h-3.5" />
-                <span>Commercial Solutions & Technical Directory</span>
-              </div>
-
               {/* Main Headline */}
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.15]">
                 Commercial Hardware Engineering & <br className="hidden sm:inline" />
@@ -153,10 +147,10 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                 </button>
                 <a
                   href="#service-categories"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-[50px] bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-800/80 text-white text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-[50px] bg-white hover:bg-slate-100 text-emerald-950 text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer shadow-md"
                 >
                   <span>Browse Categories</span>
-                  <ChevronRight className="w-4 h-4 text-[#84CC16]" />
+                  <ChevronRight className="w-4 h-4 text-emerald-950" />
                 </a>
               </div>
             </div>
@@ -169,11 +163,8 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-emerald-900/40 pb-6">
             <div>
-              <span className="text-xs font-bold uppercase tracking-widest text-[#84CC16] mb-1 block">
-                Service Directory Filter
-              </span>
               <h2 className="text-xl sm:text-2xl font-bold text-white">
-                Specialized Service Offerings
+                Service Category
               </h2>
             </div>
 
@@ -224,12 +215,6 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             {/* Category Banner */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-6 rounded-[1px] bg-[#061814] border-l-4 border-l-[#84CC16]">
               <div className="space-y-1">
-                <div className="flex items-center gap-2">
-                  <Printer className="w-5 h-5 text-[#84CC16]" />
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#84CC16]">
-                    Category 1
-                  </span>
-                </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-white">
                   Printer Sales, Repair, Maintenance & Electronics
                 </h3>
@@ -240,10 +225,10 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
 
               <button
                 onClick={() => onOpenConsultation('Printer & Hardware Category Inquiry')}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[50px] bg-emerald-950 hover:bg-emerald-900 border border-emerald-800/80 text-xs font-bold text-white transition-all w-fit cursor-pointer shrink-0"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[50px] bg-white hover:bg-slate-100 text-xs font-bold text-emerald-950 transition-all w-fit cursor-pointer shrink-0 shadow-md"
               >
                 <span>Inquire Category</span>
-                <ArrowRight className="w-4 h-4 text-[#84CC16]" />
+                <ArrowRight className="w-4 h-4 text-emerald-950" />
               </button>
             </div>
 
@@ -267,10 +252,6 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                         referrerPolicy="no-referrer"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#061814] via-transparent to-transparent pointer-events-none" />
-                      
-                      <div className="absolute top-3 right-3 px-2.5 py-1 rounded bg-[#061814]/90 backdrop-blur-sm border border-emerald-800/60 text-[10px] font-bold text-[#84CC16] uppercase tracking-wider">
-                        View Specs
-                      </div>
                     </div>
 
                     {/* Card Body */}
@@ -338,12 +319,6 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             {/* Category Banner */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-6 rounded-[1px] bg-[#061814] border-l-4 border-l-[#84CC16]">
               <div className="space-y-1">
-                <div className="flex items-center gap-2">
-                  <Sparkles className="w-5 h-5 text-[#84CC16]" />
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#84CC16]">
-                    Category 2
-                  </span>
-                </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-white">
                   Creative Branding, Digital Print & 3D Signage
                 </h3>
@@ -354,10 +329,10 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
 
               <button
                 onClick={() => onOpenConsultation('Creative & Signage Category Inquiry')}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[50px] bg-emerald-950 hover:bg-emerald-900 border border-emerald-800/80 text-xs font-bold text-white transition-all w-fit cursor-pointer shrink-0"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[50px] bg-white hover:bg-slate-100 text-xs font-bold text-emerald-950 transition-all w-fit cursor-pointer shrink-0 shadow-md"
               >
                 <span>Inquire Category</span>
-                <ArrowRight className="w-4 h-4 text-[#84CC16]" />
+                <ArrowRight className="w-4 h-4 text-emerald-950" />
               </button>
             </div>
 
@@ -381,10 +356,6 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                         referrerPolicy="no-referrer"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#061814] via-transparent to-transparent pointer-events-none" />
-                      
-                      <div className="absolute top-3 right-3 px-2.5 py-1 rounded bg-[#061814]/90 backdrop-blur-sm border border-emerald-800/60 text-[10px] font-bold text-[#84CC16] uppercase tracking-wider">
-                        View Specs
-                      </div>
                     </div>
 
                     {/* Card Body */}
@@ -445,7 +416,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
       )}
 
       {/* 6. Service Delivery Workflow */}
-      <section className="py-16 bg-[#061814] border-t border-emerald-950">
+      <section className="py-16 bg-[#061814] border-none">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
@@ -461,32 +432,21 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {workflowSteps.map((step, idx) => {
-              const StepIcon = step.icon;
-              return (
-                <div 
-                  key={idx} 
-                  className="p-6 rounded-[1px] bg-[#04110e] border border-emerald-900/60 shadow-xl space-y-3 flex flex-col justify-between"
-                >
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <div className="w-10 h-10 rounded-lg bg-emerald-950 flex items-center justify-center text-[#84CC16] border border-emerald-800/60">
-                        <StepIcon className="w-5 h-5 stroke-[2.2]" />
-                      </div>
-                      <span className="text-sm font-mono font-bold text-[#84CC16]">
-                        {step.step}
-                      </span>
-                    </div>
-                    <h3 className="text-base font-bold text-white font-display">
-                      {step.title}
-                    </h3>
-                    <p className="text-xs text-slate-300 leading-relaxed">
-                      {step.description}
-                    </p>
-                  </div>
+            {workflowSteps.map((step, idx) => (
+              <div 
+                key={idx} 
+                className="p-6 rounded-[1px] bg-[#04110e] border-none border-transparent shadow-xl space-y-3 flex flex-col justify-between"
+              >
+                <div className="space-y-3">
+                  <h3 className="text-base font-bold text-white font-display">
+                    {step.title}
+                  </h3>
+                  <p className="text-xs text-slate-300 leading-relaxed">
+                    {step.description}
+                  </p>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
 
         </div>
@@ -494,7 +454,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
 
       {/* 7. Services Contact & Inquiry Section */}
       <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-[1px] bg-[#061814] border border-emerald-900/60 p-6 sm:p-10 lg:p-12 shadow-2xl">
+        <div className="rounded-[1px] bg-[#061814] border-none p-6 sm:p-10 lg:p-12 shadow-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             
             {/* Left Column */}
@@ -514,23 +474,27 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               <div className="space-y-3 pt-2">
                 <a 
                   href="tel:0207004123"
-                  className="flex items-center gap-3 p-3 rounded-[1px] bg-[#04110e] border border-emerald-900/50 text-xs text-slate-200 hover:text-[#84CC16] transition-colors"
+                  className="flex items-center gap-3 p-3 rounded-[1px] bg-[#04110e] border-none text-xs text-slate-200 hover:text-[#84CC16] transition-colors"
                 >
                   <PhoneCall className="w-4 h-4 text-[#84CC16]" />
                   <span>Call Us: 0207004123</span>
                 </a>
                 <a 
-                  href="mailto:nanadjan5050@gmail.com"
-                  className="flex items-center gap-3 p-3 rounded-[1px] bg-[#04110e] border border-emerald-900/50 text-xs text-slate-200 hover:text-[#84CC16] transition-colors"
+                  href="#service-inquiry-form"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('service-inquiry-form')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="flex items-center gap-3 p-3 rounded-[1px] bg-[#04110e] border-none text-xs text-slate-200 hover:text-[#84CC16] transition-colors cursor-pointer"
                 >
                   <Mail className="w-4 h-4 text-[#84CC16]" />
-                  <span>Email: nanadjan5050@gmail.com</span>
+                  <span>Email Inquiries: Direct Online Form</span>
                 </a>
               </div>
             </div>
 
             {/* Right Column: Direct Form */}
-            <div className="lg:col-span-7 bg-[#04110e] p-6 sm:p-8 rounded-[1px] border border-emerald-900/60 shadow-xl">
+            <div id="service-inquiry-form" className="lg:col-span-7 bg-[#04110e] p-6 sm:p-8 rounded-[1px] border-none shadow-xl">
               {formSubmitted ? (
                 <div className="text-center py-8 space-y-4 animate-in fade-in duration-300">
                   <div className="w-14 h-14 rounded-full bg-[#84CC16] text-slate-950 mx-auto flex items-center justify-center font-bold">
@@ -567,7 +531,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                         placeholder="e.g. Samuel Asante"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full bg-[#061814] border border-emerald-900 rounded-[1px] px-3.5 py-2.5 text-xs text-white placeholder:text-slate-600 focus:outline-none focus:border-[#84CC16]"
+                        className="w-full bg-[#061814] border-none rounded-[1px] px-3.5 py-2.5 text-xs text-white placeholder:text-slate-600 focus:outline-none focus:ring-1 focus:ring-[#84CC16]"
                       />
                     </div>
 
@@ -581,7 +545,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                         placeholder="e.g. samuel@printshop.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full bg-[#061814] border border-emerald-900 rounded-[1px] px-3.5 py-2.5 text-xs text-white placeholder:text-slate-600 focus:outline-none focus:border-[#84CC16]"
+                        className="w-full bg-[#061814] border-none rounded-[1px] px-3.5 py-2.5 text-xs text-white placeholder:text-slate-600 focus:outline-none focus:ring-1 focus:ring-[#84CC16]"
                       />
                     </div>
                   </div>
@@ -596,7 +560,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                         placeholder="e.g. 0207004123"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full bg-[#061814] border border-emerald-900 rounded-[1px] px-3.5 py-2.5 text-xs text-white placeholder:text-slate-600 focus:outline-none focus:border-[#84CC16]"
+                        className="w-full bg-[#061814] border-none rounded-[1px] px-3.5 py-2.5 text-xs text-white placeholder:text-slate-600 focus:outline-none focus:ring-1 focus:ring-[#84CC16]"
                       />
                     </div>
 
@@ -607,7 +571,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                       <select
                         value={selectedServiceInForm}
                         onChange={(e) => setSelectedServiceInForm(e.target.value)}
-                        className="w-full bg-[#061814] border border-emerald-900 rounded-[1px] px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-[#84CC16] cursor-pointer"
+                        className="w-full bg-[#061814] border-none rounded-[1px] px-3.5 py-2.5 text-xs text-white focus:outline-none focus:ring-1 focus:ring-[#84CC16] cursor-pointer"
                       >
                         {servicesData.map((s) => (
                           <option key={s.id} value={s.title} className="bg-[#051512] text-white">
@@ -627,7 +591,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                       placeholder="Specify printer model, fault symptoms, signage dimensions, or order volume..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full bg-[#061814] border border-emerald-900 rounded-[1px] px-3.5 py-2.5 text-xs text-white placeholder:text-slate-600 focus:outline-none focus:border-[#84CC16] resize-none"
+                      className="w-full bg-[#061814] border-none rounded-[1px] px-3.5 py-2.5 text-xs text-white placeholder:text-slate-600 focus:outline-none focus:ring-1 focus:ring-[#84CC16] resize-none"
                     />
                   </div>
 

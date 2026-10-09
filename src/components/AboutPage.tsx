@@ -143,11 +143,6 @@ export const AboutPage: React.FC<AboutPageProps> = ({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
             {/* Left Content */}
             <div className="lg:col-span-8 space-y-5 sm:space-y-6 text-left">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/80 border border-emerald-800/60 text-[#84cc16] text-xs font-bold uppercase tracking-widest">
-                <Building2 className="w-3.5 h-3.5" />
-                <span>Company Profile & Engineering Identity</span>
-              </div>
-
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1] font-display break-words">
                 The Engineering Behind <br className="hidden sm:inline" />
                 <span className="text-[#84CC16]">MOD Innovations</span>
@@ -156,22 +151,6 @@ export const AboutPage: React.FC<AboutPageProps> = ({
               <p className="text-sm sm:text-base md:text-lg text-slate-300 max-w-2xl font-normal leading-relaxed">
                 Founded to bridge the gap between high-precision printing machinery, micro-electronic circuitry restoration, and architectural visual fabrication. We exist to maximize hardware longevity and produce uncompromising print craftsmanship.
               </p>
-
-              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4">
-                <a
-                  href="#company-story"
-                  className="px-6 py-3.5 rounded-[50px] text-xs font-bold uppercase tracking-wider text-slate-950 bg-[#84cc16] hover:bg-[#bef264] transition-all duration-200 shadow-md shadow-lime-500/15 inline-flex items-center justify-center cursor-pointer active:scale-95 text-center"
-                >
-                  Our Story & Mission
-                </a>
-                <button
-                  onClick={() => onOpenConsultation('Technical Consultation & Facility Inquiry')}
-                  className="px-6 py-3.5 rounded-[50px] text-xs font-bold uppercase tracking-wider text-white bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-800/80 transition-all duration-200 inline-flex items-center justify-center cursor-pointer active:scale-95 gap-2 text-center"
-                >
-                  <span>Connect With Leadership</span>
-                  <ArrowRight className="w-4 h-4 text-[#84cc16]" />
-                </button>
-              </div>
             </div>
 
             {/* Right Stat / Value Quick-Card */}

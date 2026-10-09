@@ -74,9 +74,13 @@ export const Footer: React.FC<FooterProps> = ({
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-[#84CC16]" />
-                <a href="mailto:nanadjan5050@gmail.com" className="hover:text-[#84CC16] transition-colors">
-                  Email: nanadjan5050@gmail.com
-                </a>
+                <button 
+                  type="button"
+                  onClick={() => onOpenConsultation('Direct Technical Inquiry')} 
+                  className="hover:text-[#84CC16] transition-colors text-left cursor-pointer"
+                >
+                  Email Support: Online Inquiry Form
+                </button>
               </div>
               <div className="flex items-center gap-2">
                 <Globe className="w-3.5 h-3.5 text-[#84CC16]" />

@@ -1,7 +1,6 @@
 import React from 'react';
 import { 
   Home, 
-  Award, 
   ShieldCheck, 
   Cpu, 
   CheckCircle2, 
@@ -205,11 +204,6 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({
 
           {/* Eyebrow and Main Page Headline */}
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-800/60 text-[#84CC16] text-xs font-bold uppercase tracking-widest">
-              <Award className="w-3.5 h-3.5" />
-              <span>Engineering Excellence & Measurable Value</span>
-            </div>
-            
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
               Why Choose <span className="text-[#84CC16]">MOD Innovations</span>
             </h1>
@@ -229,7 +223,7 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({
 
               <a
                 href="tel:0207004123"
-                className="px-6 py-3 rounded-[50px] bg-emerald-950/70 hover:bg-emerald-900/80 border border-emerald-700/40 text-slate-200 font-bold text-xs uppercase tracking-wider transition-all duration-200 flex items-center gap-2 cursor-pointer"
+                className="px-6 py-3 rounded-[50px] bg-emerald-950/70 hover:bg-emerald-900/80 border-none text-slate-200 font-bold text-xs uppercase tracking-wider transition-all duration-200 flex items-center gap-2 cursor-pointer"
               >
                 <PhoneCall className="w-4 h-4 text-[#84CC16]" />
                 <span>Direct Line: 0207004123</span>
@@ -259,10 +253,6 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({
                     {item.desc}
                   </p>
                 </div>
-                <div className="mt-4 pt-3 border-t border-emerald-900/30 flex items-center justify-between text-[11px] text-emerald-400 font-semibold">
-                  <span>Verified Standard</span>
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#84CC16]" />
-                </div>
               </div>
             ))}
           </div>
@@ -272,9 +262,6 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({
       {/* 3. Deep 6 Core Differentiators */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-800/60 text-[#84CC16] text-[11px] font-bold uppercase tracking-widest">
-            <span>Competitive Engineering Advantage</span>
-          </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight font-display">
             The MOD Innovations Standard of Service
           </h2>
@@ -284,35 +271,19 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {differentiators.map((diff, index) => {
-            const Icon = diff.icon;
+          {differentiators.map((diff) => {
             return (
               <div 
                 key={diff.id} 
                 className="bg-[#061c17] hover:bg-[#07241d] border-none rounded-[1px] p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 shadow-xl group"
               >
                 <div className="space-y-4">
-                  {/* Top metadata */}
-                  <div className="flex items-center justify-between">
-                    <div className="w-10 h-10 rounded-full bg-emerald-950 border border-emerald-800/50 flex items-center justify-center text-[#84CC16] group-hover:scale-110 transition-transform">
-                      <Icon className="w-5 h-5" />
-                    </div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800/40">
-                      {diff.badge}
-                    </span>
-                  </div>
-
                   {/* Title & Headline */}
                   <div>
-                    <span className="text-xs font-mono font-bold text-slate-500">0{index + 1} · PILLAR</span>
                     <h3 className="text-lg font-bold text-white mt-1 group-hover:text-[#EFDFBD] transition-colors">
                       {diff.title}
                     </h3>
                   </div>
-
-                  <p className="text-xs text-[#84CC16] font-semibold">
-                    {diff.headline}
-                  </p>
 
                   <p className="text-xs text-slate-300 leading-relaxed">
                     {diff.description}
@@ -334,10 +305,9 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({
                     onClick={() => onOpenConsultation(`Inquiry on ${diff.title}`)}
                     className="text-xs font-bold text-[#84CC16] hover:text-[#bef264] flex items-center gap-1.5 transition-colors cursor-pointer"
                   >
-                    <span>Discuss Requirements</span>
+                    <span>Request a Service</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </button>
-                  <span className="text-[10px] font-mono text-slate-500 uppercase">MOD Standard</span>
                 </div>
               </div>
             );
@@ -349,7 +319,7 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({
       <section className="bg-[#030e0c] border-y border-emerald-900/30 py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-800/60 text-[#84CC16] text-[11px] font-bold uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-transparent border-none text-[#84CC16] text-[11px] font-bold uppercase tracking-widest">
               <span>Direct Comparison</span>
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight font-display">
@@ -405,7 +375,7 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
         <div className="bg-gradient-to-br from-[#061c17] via-[#07241d] to-[#04120e] rounded-[1px] p-8 sm:p-12 border-none shadow-2xl relative overflow-hidden">
           <div className="max-w-3xl space-y-6 relative z-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/90 border border-emerald-800/70 text-[#84CC16] text-[11px] font-bold uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-transparent border-none text-[#84CC16] text-[11px] font-bold uppercase tracking-widest">
               <ShieldCheck className="w-3.5 h-3.5" />
               <span>Our Service Commitment</span>
             </div>
@@ -419,8 +389,8 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-              <div className="flex items-start gap-3 bg-emerald-950/60 p-4 rounded-[1px] border border-emerald-900/30">
-                <div className="p-2 rounded-full bg-emerald-900/50 text-[#84CC16]">
+              <div className="flex items-start gap-3 bg-emerald-950/60 p-4 rounded-[1px] border-none">
+                <div className="p-2 rounded-full bg-transparent text-[#84CC16]">
                   <Wrench className="w-4 h-4" />
                 </div>
                 <div>
@@ -429,8 +399,8 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({
                 </div>
               </div>
 
-              <div className="flex items-start gap-3 bg-emerald-950/60 p-4 rounded-[1px] border border-emerald-900/30">
-                <div className="p-2 rounded-full bg-emerald-900/50 text-[#84CC16]">
+              <div className="flex items-start gap-3 bg-emerald-950/60 p-4 rounded-[1px] border-none">
+                <div className="p-2 rounded-full bg-transparent text-[#84CC16]">
                   <Printer className="w-4 h-4" />
                 </div>
                 <div>
@@ -451,7 +421,7 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({
 
               <button
                 onClick={onNavigateServices}
-                className="px-6 py-3.5 rounded-[50px] bg-emerald-950/80 hover:bg-emerald-900/90 border border-emerald-700/50 text-slate-200 font-bold text-xs uppercase tracking-wider transition-all duration-200 flex items-center gap-2 cursor-pointer"
+                className="px-6 py-3.5 rounded-[50px] bg-emerald-950/80 hover:bg-emerald-900/90 border-none text-slate-200 font-bold text-xs uppercase tracking-wider transition-all duration-200 flex items-center gap-2 cursor-pointer"
               >
                 <span>Explore Full Service Portfolio</span>
                 <ChevronRight className="w-4 h-4" />

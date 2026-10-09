@@ -42,22 +42,12 @@ export const ContactPage: React.FC<ContactPageProps> = ({
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [copiedField, setCopiedField] = useState<string | null>(null);
 
   const contactDetails = {
     phone: '0207004123',
     whatsapp: '0207004123',
-    email: 'nanadjan5050@gmail.com',
     website: 'www.modinnovations.net',
     websiteUrl: 'https://www.modinnovations.net'
-  };
-
-  const handleCopy = (text: string, fieldName: string) => {
-    navigator.clipboard.writeText(text);
-    setCopiedField(fieldName);
-    setTimeout(() => {
-      setCopiedField(null);
-    }, 2000);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -117,11 +107,6 @@ export const ContactPage: React.FC<ContactPageProps> = ({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             {/* Left Hero Text */}
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/80 border border-emerald-800/60 text-[#84cc16] text-xs font-bold uppercase tracking-widest">
-                <PhoneCall className="w-3.5 h-3.5" />
-                <span>Direct Communication & Technical Dispatch</span>
-              </div>
-
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.15] font-display">
                 Get in Direct Contact with <br className="hidden sm:inline" />
                 <span className="text-[#EFDEBC]">MOD Innovations</span>
@@ -135,7 +120,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
               <div className="flex flex-wrap gap-3 pt-2">
                 <a
                   href={`tel:${contactDetails.phone}`}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-900/40 border border-emerald-700/50 text-xs font-semibold text-slate-200 hover:text-white hover:border-[#84cc16] transition-all cursor-pointer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-900/40 border-none text-xs font-semibold text-slate-200 hover:text-white transition-all cursor-pointer"
                 >
                   <PhoneCall className="w-3.5 h-3.5 text-[#84cc16]" />
                   <span>Call: {contactDetails.phone}</span>
@@ -144,36 +129,40 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                   href={`https://wa.me/${contactDetails.whatsapp}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-900/40 border border-emerald-700/50 text-xs font-semibold text-slate-200 hover:text-white hover:border-[#84cc16] transition-all cursor-pointer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-900/40 border-none text-xs font-semibold text-slate-200 hover:text-white transition-all cursor-pointer"
                 >
                   <MessageSquare className="w-3.5 h-3.5 text-[#84cc16]" />
                   <span>WhatsApp: {contactDetails.whatsapp}</span>
                 </a>
                 <a
-                  href={`mailto:${contactDetails.email}`}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-900/40 border border-emerald-700/50 text-xs font-semibold text-slate-200 hover:text-white hover:border-[#84cc16] transition-all cursor-pointer"
+                  href="#contact-form"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-900/40 border-none text-xs font-semibold text-slate-200 hover:text-white transition-all cursor-pointer"
                 >
                   <Mail className="w-3.5 h-3.5 text-[#84cc16]" />
-                  <span>{contactDetails.email}</span>
+                  <span>Email Inquiry Form</span>
                 </a>
               </div>
             </div>
 
             {/* Right Hero Visual Banner */}
             <div className="lg:col-span-5">
-              <div className="relative rounded-2xl overflow-hidden border border-emerald-800/60 shadow-2xl bg-[#061814] group">
+              <div className="relative rounded-[1px] overflow-hidden border-none shadow-2xl bg-[#061814] group">
                 <img 
                   src={contactHeroImg} 
                   alt="MOD Innovations Technical Support Desk" 
-                  className="w-full h-72 sm:h-80 object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-72 sm:h-80 object-cover group-hover:scale-105 transition-transform duration-700 border-none rounded-[1px]"
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#051512] via-[#051512]/40 to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-[#051512]/90 backdrop-blur-md border border-emerald-800/50">
+                <div className="absolute bottom-4 left-4 right-4 p-4 rounded-[1px] bg-[#051512]/90 backdrop-blur-md border-none">
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="text-xs font-bold uppercase tracking-wider text-[#84cc16]">Response Priority</p>
-                      <p className="text-sm font-bold text-white font-display">Fast Triage on Hardware Faults</p>
+                      <p className="text-sm font-bold text-white font-display">Fast Help for Printer Problems</p>
                     </div>
                     <div className="w-9 h-9 rounded-full bg-[#84cc16] text-slate-950 flex items-center justify-center font-bold">
                       <Clock className="w-4 h-4" />
@@ -204,200 +193,94 @@ export const ContactPage: React.FC<ContactPageProps> = ({
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           
           {/* Card 1: Phone */}
-          <div className="bg-[#061814] border-2 border-[#84cc16]/60 rounded-2xl p-6 shadow-xl relative overflow-hidden flex flex-col justify-between group hover:border-[#84cc16] transition-all">
-            <div className="absolute top-0 right-0 bg-[#84cc16] text-slate-950 text-[10px] font-extrabold px-3 py-1 rounded-bl-lg uppercase tracking-wider">
-              Urgent Calls
-            </div>
+          <div className="bg-[#061814] border-none rounded-[1px] p-6 shadow-xl relative overflow-hidden flex flex-col justify-between group transition-all">
             <div>
-              <div className="w-12 h-12 rounded-xl bg-emerald-900/60 border border-emerald-700/50 text-[#84cc16] flex items-center justify-center mb-4 group-hover:bg-[#84cc16] group-hover:text-slate-950 transition-colors">
-                <PhoneCall className="w-6 h-6 stroke-[2.2]" />
-              </div>
-              <span className="text-[11px] font-bold text-[#84cc16] uppercase tracking-wider block mb-1">
-                Direct Technical Line
-              </span>
-              <h3 className="text-lg font-bold text-white font-display mb-1">
+              <h3 className="text-lg font-bold text-white font-display mb-2">
                 Phone Support
               </h3>
-              <p className="text-xl font-extrabold text-[#EFDEBC] font-mono tracking-tight my-2">
-                {contactDetails.phone}
-              </p>
               <p className="text-xs text-slate-300 leading-relaxed mb-4">
                 Call directly to discuss active printer breakdowns, emergency troubleshooting, and technical intake.
               </p>
             </div>
 
-            <div className="space-y-2 pt-2 border-t border-emerald-900/40">
+            <div className="pt-2 border-t border-emerald-900/40">
               <a
                 href={`tel:${contactDetails.phone}`}
-                className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-[50px] bg-[#84cc16] hover:bg-[#bef264] text-slate-950 font-bold text-xs uppercase tracking-wider transition-all cursor-pointer shadow-lg shadow-lime-500/10 active:scale-98"
+                className="w-full inline-flex items-center justify-center py-2.5 px-4 rounded-[50px] bg-[#84cc16] hover:bg-[#bef264] text-slate-950 font-bold text-xs uppercase tracking-wider transition-all cursor-pointer shadow-lg shadow-lime-500/10 active:scale-98"
               >
-                <PhoneCall className="w-3.5 h-3.5" />
                 <span>Call 0207004123</span>
               </a>
-              <button
-                onClick={() => handleCopy(contactDetails.phone, 'phone')}
-                className="w-full inline-flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-[50px] bg-emerald-950/70 border border-emerald-800/50 hover:border-slate-400 text-slate-300 text-xs transition-colors cursor-pointer"
-              >
-                {copiedField === 'phone' ? (
-                  <>
-                    <Check className="w-3 h-3 text-[#84cc16]" />
-                    <span className="text-[#84cc16] font-semibold">Copied to Clipboard</span>
-                  </>
-                ) : (
-                  <>
-                    <Copy className="w-3 h-3 text-slate-400" />
-                    <span>Copy Phone Number</span>
-                  </>
-                )}
-              </button>
             </div>
           </div>
 
           {/* Card 2: WhatsApp */}
-          <div className="bg-[#061814] border-2 border-emerald-700/60 rounded-2xl p-6 shadow-xl relative overflow-hidden flex flex-col justify-between group hover:border-[#84cc16] transition-all">
-            <div className="absolute top-0 right-0 bg-emerald-600 text-white text-[10px] font-extrabold px-3 py-1 rounded-bl-lg uppercase tracking-wider">
-              Fast Visual Chat
-            </div>
+          <div className="bg-[#061814] border-none rounded-[1px] p-6 shadow-xl relative overflow-hidden flex flex-col justify-between group transition-all">
             <div>
-              <div className="w-12 h-12 rounded-xl bg-emerald-900/60 border border-emerald-700/50 text-[#84cc16] flex items-center justify-center mb-4 group-hover:bg-[#84cc16] group-hover:text-slate-950 transition-colors">
-                <MessageSquare className="w-6 h-6 stroke-[2.2]" />
-              </div>
-              <span className="text-[11px] font-bold text-emerald-400 uppercase tracking-wider block mb-1">
-                WhatsApp Desk
-              </span>
-              <h3 className="text-lg font-bold text-white font-display mb-1">
+              <h3 className="text-lg font-bold text-white font-display mb-2">
                 WhatsApp Messaging
               </h3>
-              <p className="text-xl font-extrabold text-[#EFDEBC] font-mono tracking-tight my-2">
-                {contactDetails.whatsapp}
-              </p>
               <p className="text-xs text-slate-300 leading-relaxed mb-4">
                 Send short videos of printing errors, photos of faulty circuit boards, or vector artwork previews.
               </p>
             </div>
 
-            <div className="space-y-2 pt-2 border-t border-emerald-900/40">
+            <div className="pt-2 border-t border-emerald-900/40">
               <a
                 href={`https://wa.me/${contactDetails.whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-[50px] bg-[#25D366] hover:bg-[#20bd5a] text-slate-950 font-bold text-xs uppercase tracking-wider transition-all cursor-pointer shadow-lg shadow-emerald-500/10 active:scale-98"
+                className="w-full inline-flex items-center justify-center py-2.5 px-4 rounded-[50px] bg-[#25D366] hover:bg-[#20bd5a] text-slate-950 font-bold text-xs uppercase tracking-wider transition-all cursor-pointer shadow-lg shadow-emerald-500/10 active:scale-98"
               >
-                <MessageSquare className="w-3.5 h-3.5" />
                 <span>Chat on WhatsApp</span>
               </a>
-              <button
-                onClick={() => handleCopy(contactDetails.whatsapp, 'whatsapp')}
-                className="w-full inline-flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-[50px] bg-emerald-950/70 border border-emerald-800/50 hover:border-slate-400 text-slate-300 text-xs transition-colors cursor-pointer"
-              >
-                {copiedField === 'whatsapp' ? (
-                  <>
-                    <Check className="w-3 h-3 text-[#84cc16]" />
-                    <span className="text-[#84cc16] font-semibold">Copied to Clipboard</span>
-                  </>
-                ) : (
-                  <>
-                    <Copy className="w-3 h-3 text-slate-400" />
-                    <span>Copy WhatsApp Number</span>
-                  </>
-                )}
-              </button>
             </div>
           </div>
 
           {/* Card 3: Email */}
-          <div className="bg-[#061814] border border-emerald-900/70 rounded-2xl p-6 shadow-xl relative overflow-hidden flex flex-col justify-between group hover:border-emerald-700 transition-all">
+          <div className="bg-[#061814] border-none rounded-[1px] p-6 shadow-xl relative overflow-hidden flex flex-col justify-between group transition-all">
             <div>
-              <div className="w-12 h-12 rounded-xl bg-emerald-900/60 border border-emerald-700/50 text-[#84cc16] flex items-center justify-center mb-4 group-hover:bg-[#84cc16] group-hover:text-slate-950 transition-colors">
-                <Mail className="w-6 h-6 stroke-[2.2]" />
-              </div>
-              <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-1">
-                Formal RFPs & Files
-              </span>
-              <h3 className="text-lg font-bold text-white font-display mb-1">
+              <h3 className="text-lg font-bold text-white font-display mb-2">
                 Email Dispatch
               </h3>
-              <p className="text-sm font-semibold text-[#EFDEBC] font-mono break-all my-2">
-                {contactDetails.email}
-              </p>
               <p className="text-xs text-slate-300 leading-relaxed mb-4">
                 Submit comprehensive equipment tender documents, high-resolution production assets, or invoices.
               </p>
             </div>
 
-            <div className="space-y-2 pt-2 border-t border-emerald-900/40">
+            <div className="pt-2 border-t border-emerald-900/40">
               <a
-                href={`mailto:${contactDetails.email}`}
-                className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-[50px] bg-emerald-900/60 hover:bg-emerald-800 border border-emerald-700/60 text-white font-bold text-xs uppercase tracking-wider transition-all cursor-pointer"
+                href="#contact-form"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="w-full inline-flex items-center justify-center py-2.5 px-4 rounded-[50px] bg-emerald-900/60 hover:bg-emerald-800 border-none text-white font-bold text-xs uppercase tracking-wider transition-all cursor-pointer"
               >
-                <Mail className="w-3.5 h-3.5 text-[#84cc16]" />
-                <span>Send Email</span>
+                <span>Open Inquiry Form</span>
               </a>
-              <button
-                onClick={() => handleCopy(contactDetails.email, 'email')}
-                className="w-full inline-flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-[50px] bg-emerald-950/70 border border-emerald-800/50 hover:border-slate-400 text-slate-300 text-xs transition-colors cursor-pointer"
-              >
-                {copiedField === 'email' ? (
-                  <>
-                    <Check className="w-3 h-3 text-[#84cc16]" />
-                    <span className="text-[#84cc16] font-semibold">Copied Email</span>
-                  </>
-                ) : (
-                  <>
-                    <Copy className="w-3 h-3 text-slate-400" />
-                    <span>Copy Email Address</span>
-                  </>
-                )}
-              </button>
             </div>
           </div>
 
           {/* Card 4: Official Portal */}
-          <div className="bg-[#061814] border border-emerald-900/70 rounded-2xl p-6 shadow-xl relative overflow-hidden flex flex-col justify-between group hover:border-emerald-700 transition-all">
+          <div className="bg-[#061814] border-none rounded-[1px] p-6 shadow-xl relative overflow-hidden flex flex-col justify-between group transition-all">
             <div>
-              <div className="w-12 h-12 rounded-xl bg-emerald-900/60 border border-emerald-700/50 text-[#84cc16] flex items-center justify-center mb-4 group-hover:bg-[#84cc16] group-hover:text-slate-950 transition-colors">
-                <Globe className="w-6 h-6 stroke-[2.2]" />
-              </div>
-              <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-1">
-                Digital Gateway
-              </span>
-              <h3 className="text-lg font-bold text-white font-display mb-1">
+              <h3 className="text-lg font-bold text-white font-display mb-2">
                 Official Web Portal
               </h3>
-              <p className="text-base font-bold text-[#EFDEBC] font-mono break-all my-2">
-                {contactDetails.website}
-              </p>
               <p className="text-xs text-slate-300 leading-relaxed mb-4">
                 Access services directories, technical specifications, and online inquiry tools anytime.
               </p>
             </div>
 
-            <div className="space-y-2 pt-2 border-t border-emerald-900/40">
+            <div className="pt-2 border-t border-emerald-900/40">
               <a
                 href={contactDetails.websiteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-[50px] bg-emerald-900/60 hover:bg-emerald-800 border border-emerald-700/60 text-white font-bold text-xs uppercase tracking-wider transition-all cursor-pointer"
+                className="w-full inline-flex items-center justify-center py-2.5 px-4 rounded-[50px] bg-emerald-900/60 hover:bg-emerald-800 border-none text-white font-bold text-xs uppercase tracking-wider transition-all cursor-pointer"
               >
-                <Globe className="w-3.5 h-3.5 text-[#84cc16]" />
                 <span>Visit Portal</span>
               </a>
-              <button
-                onClick={() => handleCopy(contactDetails.website, 'website')}
-                className="w-full inline-flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-[50px] bg-emerald-950/70 border border-emerald-800/50 hover:border-slate-400 text-slate-300 text-xs transition-colors cursor-pointer"
-              >
-                {copiedField === 'website' ? (
-                  <>
-                    <Check className="w-3 h-3 text-[#84cc16]" />
-                    <span className="text-[#84cc16] font-semibold">Copied URL</span>
-                  </>
-                ) : (
-                  <>
-                    <Copy className="w-3 h-3 text-slate-400" />
-                    <span>Copy Web Address</span>
-                  </>
-                )}
-              </button>
             </div>
           </div>
 
@@ -409,7 +292,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-stretch">
           
           {/* Left Column: What to Provide for Faster Triage */}
-          <div className="lg:col-span-5 bg-[#061814] border border-emerald-900/60 rounded-3xl p-5 sm:p-8 md:p-10 shadow-2xl flex flex-col justify-between space-y-6 sm:space-y-8">
+          <div className="lg:col-span-5 bg-[#061814] border-none rounded-[1px] p-5 sm:p-8 md:p-10 shadow-2xl flex flex-col justify-between space-y-6 sm:space-y-8">
             <div className="space-y-6">
               <div className="space-y-2">
                 <span className="text-xs font-bold uppercase tracking-wider text-[#84cc16]">
@@ -426,7 +309,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
               {/* Checklist Guidance */}
               <div className="space-y-4 pt-2">
                 {preparationChecklist.map((item, idx) => (
-                  <div key={idx} className="p-3.5 rounded-xl bg-[#04110e] border border-emerald-900/50 space-y-1">
+                  <div key={idx} className="p-3.5 rounded-[1px] bg-[#04110e] border-none space-y-1">
                     <div className="flex items-center gap-2 text-xs font-bold text-[#84CC16]">
                       <FileCheck2 className="w-4 h-4 shrink-0" />
                       <span>{item.category}</span>
@@ -439,7 +322,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
               </div>
             </div>
 
-            <div className="p-4 rounded-2xl bg-emerald-950/60 border border-emerald-800/50 space-y-2">
+            <div className="p-4 rounded-[1px] bg-emerald-950/60 border-none space-y-2">
               <div className="flex items-center gap-2 text-xs font-bold text-white">
                 <Clock className="w-4 h-4 text-[#84cc16]" />
                 <span>Response Commitments</span>
@@ -451,7 +334,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
           </div>
 
           {/* Right Column: Interactive Request Form */}
-          <div className="lg:col-span-7 bg-[#061814] border border-emerald-900/60 rounded-3xl p-5 sm:p-8 md:p-10 shadow-2xl flex flex-col justify-center">
+          <div id="contact-form-section" className="lg:col-span-7 bg-[#061814] border-none rounded-[1px] p-5 sm:p-8 md:p-10 shadow-2xl flex flex-col justify-center">
             {isSubmitted ? (
               <div className="text-center py-10 space-y-5 animate-in zoom-in-95 duration-300">
                 <div className="w-16 h-16 rounded-full bg-[#84cc16] text-slate-950 mx-auto flex items-center justify-center shadow-xl shadow-lime-500/20">
@@ -467,7 +350,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                   </p>
                 </div>
 
-                <div className="bg-emerald-950/60 border border-emerald-800/60 rounded-2xl p-5 text-left max-w-md mx-auto space-y-2 text-xs text-slate-300">
+                <div className="bg-emerald-950/60 border border-emerald-800/60 rounded-[1px] p-5 text-left max-w-md mx-auto space-y-2 text-xs text-slate-300">
                   <div className="flex justify-between">
                     <span className="text-slate-500">Service Category:</span>
                     <span className="text-white font-medium text-right">{formData.serviceRequested}</span>
@@ -486,7 +369,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                   )}
                   <div className="flex justify-between pt-1 border-t border-emerald-900/40">
                     <span className="text-slate-500">Official Channel:</span>
-                    <span className="text-[#84cc16] font-semibold">{contactDetails.email}</span>
+                    <span className="text-[#84cc16] font-semibold">MOD Innovations Secure Dispatch</span>
                   </div>
                 </div>
 
@@ -522,7 +405,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                       placeholder="e.g. Samuel Asante"
                       value={formData.fullName}
                       onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                      className="w-full bg-[#04110e] border border-emerald-900/80 rounded-xl px-4 py-3 text-sm text-white placeholder:text-slate-600 focus:outline-none focus:border-[#84cc16] transition-colors"
+                      className="w-full bg-[#04110e] border-none rounded-[1px] px-4 py-3 text-sm text-white placeholder:text-slate-600 focus:outline-none focus:ring-1 focus:ring-[#84cc16] transition-colors"
                     />
                   </div>
 
@@ -537,7 +420,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                       placeholder="e.g. client@domain.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full bg-[#04110e] border border-emerald-900/80 rounded-xl px-4 py-3 text-sm text-white placeholder:text-slate-600 focus:outline-none focus:border-[#84cc16] transition-colors"
+                      className="w-full bg-[#04110e] border-none rounded-[1px] px-4 py-3 text-sm text-white placeholder:text-slate-600 focus:outline-none focus:ring-1 focus:ring-[#84cc16] transition-colors"
                     />
                   </div>
                 </div>
@@ -553,7 +436,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                       placeholder="e.g. 0207004123"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full bg-[#04110e] border border-emerald-900/80 rounded-xl px-4 py-3 text-sm text-white placeholder:text-slate-600 focus:outline-none focus:border-[#84cc16] transition-colors"
+                      className="w-full bg-[#04110e] border-none rounded-[1px] px-4 py-3 text-sm text-white placeholder:text-slate-600 focus:outline-none focus:ring-1 focus:ring-[#84cc16] transition-colors"
                     />
                   </div>
 
@@ -565,7 +448,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                     <select
                       value={formData.serviceRequested}
                       onChange={(e) => setFormData({ ...formData, serviceRequested: e.target.value })}
-                      className="w-full bg-[#04110e] border border-emerald-900/80 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#84cc16] transition-colors cursor-pointer"
+                      className="w-full bg-[#04110e] border-none rounded-[1px] px-4 py-3 text-sm text-white focus:outline-none focus:ring-1 focus:ring-[#84cc16] transition-colors cursor-pointer"
                     >
                       {servicesData.map((service, idx) => (
                         <option key={idx} value={service.title} className="bg-[#051512] text-white">
@@ -589,7 +472,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                     placeholder="Describe the machine issue, error codes, sign dimensions, or printing specifications..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full bg-[#04110e] border border-emerald-900/80 rounded-xl px-4 py-3 text-sm text-white placeholder:text-slate-600 focus:outline-none focus:border-[#84cc16] transition-colors resize-none"
+                    className="w-full bg-[#04110e] border-none rounded-[1px] px-4 py-3 text-sm text-white placeholder:text-slate-600 focus:outline-none focus:ring-1 focus:ring-[#84cc16] transition-colors resize-none"
                   />
                 </div>
 

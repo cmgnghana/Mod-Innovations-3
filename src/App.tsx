@@ -15,15 +15,12 @@ import { ServicesPage } from './components/ServicesPage';
 import { WhyChooseUsPage } from './components/WhyChooseUsPage';
 import { ContactPage } from './components/ContactPage';
 import { SitemapPage } from './components/SitemapPage';
-import { ConsultationModal } from './components/ConsultationModal';
 import { ServiceDetailModal } from './components/ServiceDetailModal';
 import { Footer } from './components/Footer';
 import { ServiceItem } from './types';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<'home' | 'about' | 'services' | 'why-us' | 'contact' | 'sitemap'>('home');
-  const [consultationOpen, setConsultationOpen] = useState(false);
-  const [selectedConsultationService, setSelectedConsultationService] = useState<string>('Printer Mainboard and Control Board Repairs');
   const [selectedServiceDetail, setSelectedServiceDetail] = useState<ServiceItem | null>(null);
 
   useEffect(() => {
@@ -119,11 +116,8 @@ export default function App() {
     }
   };
 
-  const handleOpenConsultation = (serviceName?: string) => {
-    if (serviceName) {
-      setSelectedConsultationService(serviceName);
-    }
-    setConsultationOpen(true);
+  const handleOpenConsultation = (_serviceName?: string) => {
+    handleNavigate('contact', 'contact-form-section');
   };
 
   const handleSelectServiceCard = (service: ServiceItem) => {
@@ -221,13 +215,7 @@ export default function App() {
         onOpenConsultation={(service) => handleOpenConsultation(service)}
       />
 
-      {/* Interactive Modals */}
-      <ConsultationModal 
-        isOpen={consultationOpen}
-        onClose={() => setConsultationOpen(false)}
-        initialService={selectedConsultationService}
-      />
-
+      {/* Interactive Service Detail Modal */}
       <ServiceDetailModal 
         service={selectedServiceDetail}
         onClose={() => setSelectedServiceDetail(null)}
